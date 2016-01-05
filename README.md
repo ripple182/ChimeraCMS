@@ -1,6 +1,7 @@
 # ChimeraCMS
 
 ChimeraCMS is a C# .net drag & drop page builder CMS utilizing the following technologies:
+- ASP.NET MVC
 - MongoDB for database
 - AmazonAWS S3 for user uploaded content (images)
 - Knockout.js
