@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StaticProperties>
+  <StaticProperty>
+    <KeyName>OrderFinishedCustomerEmailTypes</KeyName>
+    <PropertyNameValues>
+      <Value>CustomerNewOrder_BasicView</Value>
+    </PropertyNameValues>
+  </StaticProperty>
+  <StaticProperty>
+    <KeyName>CustomerOrderShippedEmailTypes</KeyName>
+    <PropertyNameValues>
+      <Value>BasicView</Value>
+    </PropertyNameValues>
+  </StaticProperty>
+  <StaticProperty>
+    <KeyName>SocialMediaIconThemeTypes</KeyName>
+    <PropertyNameValues>
+      <Value>FlatTheme</Value>
+    </PropertyNameValues>
+  </StaticProperty>
+</StaticProperties>

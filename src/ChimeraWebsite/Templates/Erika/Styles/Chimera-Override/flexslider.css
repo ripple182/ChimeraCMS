@@ -1,0 +1,11 @@
+.flexslider .slides > li
+{
+    height: 310px!important;
+    overflow: hidden!important;
+    background-image: none!important;
+}
+
+.flex-control-paging
+{
+    display: none!important;
+}

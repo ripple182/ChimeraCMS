@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AdminUserRoles>
+  <AdminUserRole>
+    <Name>admin-all</Name>
+    <Description>Given this role the admin user would be able to perform all available functions.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>admin-user-view</Name>
+    <Description>Given this role the admin user would be able to view the list of all available admin users.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>admin-user-edit</Name>
+    <Description>Given this role the admin user would be able to view, edit, and add new admin users all available admin users.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>page-view</Name>
+    <Description>Give this role the admin user would be able to view the list of pages, the history of page edits, and past versions of pages.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>page-edit</Name>
+    <Description>Given this role the admin user would be able to view the list of pages, edit pages, and restore pages from past versions.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>product-view</Name>
+    <Description>Given this role the admin user would be able to view the list of products.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>product-edit</Name>
+    <Description>Given this role the admin user would be able to view the list of products, edit products, and mark products as inactive.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>setting-view</Name>
+    <Description>Given this role the admin user would be able to view the list of setting groups.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>setting-schema-edit</Name>
+    <Description>Given this role the admin user would be able to view the list of setting groups, add new setting groups, and edit existing setting groups values/schemas.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>setting-value-edit</Name>
+    <Description>Given this role the admin user would be able to view the list of setting groups and edit existing setting groups values.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>property-view</Name>
+    <Description>Given this role the admin user would be able to view the list of properties.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>property-edit</Name>
+    <Description>Given this role the admin user would be able to view the list of properties, add new properties, and add values to existing properties.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>nav-menu-new</Name>
+    <Description>Given this role the admin user would be able to add new navigation menu links.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>nav-menu-edit</Name>
+    <Description>Given this role the admin user would be able to edit the navigation menu links.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>purchase-order-view</Name>
+    <Description>Given this role the admin user would be able to view the list of orders that customers have made.</Description>
+  </AdminUserRole>
+  <AdminUserRole>
+    <Name>purchase-order-edit</Name>
+    <Description>Given this role the admin user would be able to view the list of orders that customers have made, and finalize the order by capturing the paypal payment and updating the shipping information.</Description>
+  </AdminUserRole>
+</AdminUserRoles>

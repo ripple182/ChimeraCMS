@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="HeadContent2" ContentPlaceHolderID="HeadContent" runat="server">
+    <%SettingGroup TCS = SettingGroupDAO.LoadSettingGroupByName(SettingGroupKeys.TEMPLATE_CUSTOM_SETTINGS); %>
+    <%Html.RenderPartial(Url.Content("~/Templates/" + AppSettings.ChimeraTemplate + "/Views/Shared/PartialViews/Resources/CSS.ascx"), TCS);%>
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <%SettingGroup TCS = SettingGroupDAO.LoadSettingGroupByName(SettingGroupKeys.TEMPLATE_CUSTOM_SETTINGS); %>
+    <%bool AllowEcommerce = AppSettings.AllowEcommerce; %>
+    <%int ShoppingCartCount = SiteContext.GetShoppingCartProductListCount();%>
+    <%NavigationMenu MainNavMenu = NavigationMenuDAO.LoadByKeyName(NavigationMenu.MAIN_NAVIGATION_MENU); %>
+    <%if (MainNavMenu != null && MainNavMenu.ChildNavLinks != null)
+      {%>
+            <%---------------------------%>
+            <%---------------------------%>
+            <%--ADD NAV MENU LOGIC HERE--%>
+            <%---------------------------%>
+            <%---------------------------%>
+    <%}%>
+     <%-----------------------------------%>
+     <%-----------------------------------%>
+     <%--ADD WEB USER MESSAGE LOGIC HERE--%>
+     <%-----------------------------------%>
+     <%-----------------------------------%>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    <%SettingGroup SMS = SettingGroupDAO.LoadSettingGroupByName(SettingGroupKeys.SOCIAL_MEDIA_SETTINGS); %>
+    <%string SelectedTheme = SMS.GetSettingVal(SocialMediaSettingKeys.SocialMediaIconTheme); %>
+     <%-------------------------%>
+     <%-------------------------%>
+     <%--ADD FOOTER LOGIC HERE--%>
+     <%-------------------------%>
+     <%-------------------------%>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="JavascriptContent" runat="server">
+    <%Html.RenderPartial(Url.Content("~/Templates/" + AppSettings.ChimeraTemplate + "/Views/Shared/PartialViews/Resources/JS.ascx"));%>
+</asp:Content>

@@ -1,0 +1,26 @@
+.colorpicker-element .dropdown-menu
+{
+    background-color: white!important;
+    border: none!important;
+    margin-left: 15px;
+}
+
+.colorpicker-element .colorpicker-hue
+{
+    margin-left: 5px;
+}
+
+.colorpicker-element .colorpicker-color
+{
+    display: none;
+}
+
+.colorpicker-element .colorpicker-saturation
+{
+    margin-bottom: 5px;
+}
+
+#chimera-icon-color-save
+{
+    margin-left: 25px;
+}

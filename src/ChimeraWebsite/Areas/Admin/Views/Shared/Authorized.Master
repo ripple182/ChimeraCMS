@@ -1,0 +1,185 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <%AdminUser AdminUser = AAH.SiteContext.User;%>
+    <%List<NavigationMenu> NavigationMenuList = NavigationMenuDAO.LoadAll(); %>
+    <%int NotificationCount = DashboardNotificationDAO.GetCount(); %>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4">
+                    <div class="logo">
+                        <h1><a href="#">Admin Console</a></h1>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-sm-offset-4 col-md-offset-4">
+                    <div class="list">
+                        <div class="phone">
+                            <i class="icon-user"></i>&nbsp;&nbsp;Logged In As: <b><%=AdminUser.Username %></b>
+                        </div>
+                        <hr />
+                        <div class="address">
+                            <i class="icon-time"></i>&nbsp;&nbsp;Last Login: <%if (!AdminUser.LastLoginDateUTC.Equals(DateTime.MinValue))
+                                                                               {%><b class="timeago" title="<%=AdminUser.LastLoginDateUTC.ToString("o") %>"></b><%}
+                                                                               else
+                                                                               {%><b>first login!</b><%}%>
+                        </div>
+                        <hr />
+                        <div class="address">
+                            <i class="icon-circle-arrow-right"></i>&nbsp;&nbsp;<a href="<%=Url.Content("~/Admin/Home/Logout") %>">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="navbar bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+
+                        <a href="<%=Url.Content("~/Admin/Dashboard") %>">
+                            <%if (NotificationCount > 0)
+                              {%>
+                            <span class="label label-success"><%=NotificationCount %></span>
+                            <%}%>
+                            Dashboard
+                        </a>
+                    </li>
+                    <%if (AAH.SiteContext.HasAtleastOneRole(AdminUserRoles.ALL))
+                      {%>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin Users <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <%if (AAH.SiteContext.CanAdminUserAccess(AdminUserRoles.EDIT))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/AdminUser/Edit") %>">Add New</a></li>
+                            <%}%>
+                            <%if (AAH.SiteContext.CanAdminUserAccess(AdminUserRoles.VIEW))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/AdminUser/ViewAll") %>">View All</a></li>
+                            <%}%>
+                        </ul>
+                    </li>
+                    <%}%>
+                    <%if (AAH.SiteContext.HasAtleastOneRole(PageRoles.ALL))
+                      {%>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <%if (AAH.SiteContext.CanAdminUserAccess(PageRoles.EDIT))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Page/Edit") %>">Add New</a></li>
+                            <%}%>
+                            <%if (AAH.SiteContext.CanAdminUserAccess(PageRoles.VIEW))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Page/ViewAllPageTypes") %>">View All</a></li>
+                            <%}%>
+                        </ul>
+                    </li>
+                    <%}%>
+                    <%if (AAH.SiteContext.HasAtleastOneRole(ProductRoles.ALL))
+                      {%>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <%if (AAH.SiteContext.CanAdminUserAccess(ProductRoles.EDIT))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Product/Edit") %>">Add New</a></li>
+                            <%}%>
+                            <%if (AAH.SiteContext.CanAdminUserAccess(ProductRoles.VIEW))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Product/Search") %>">Search Products</a></li>
+                            <%}%>
+                        </ul>
+                    </li>
+                    <%}%>
+                    <%if (AAH.SiteContext.CanAdminUserAccess(PurchaseOrderRoles.VIEW))
+                      {%>
+                    <li><a href="<%=Url.Content("~/Admin/PurchaseOrders/Search") %>">Orders</a></li>
+                    <%}%>
+                    <%if (AAH.SiteContext.HasAtleastOneRole(SettingRoles.ALL))
+                      {%>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <%if (AAH.SiteContext.CanAdminUserAccess(SettingRoles.EDIT_SCHEMA))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Settings/EditSchema") %>">Add New Schema</a></li>
+                            <%}%>
+                            <%if (AAH.SiteContext.CanAdminUserAccess(SettingRoles.VIEW))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Settings/ViewAll") %>">View All</a></li>
+                            <%}%>
+                        </ul>
+                    </li>
+                    <%}%>
+                    <%if (AAH.SiteContext.HasAtleastOneRole(PropertyRoles.ALL))
+                      {%>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Properties <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <%if (AAH.SiteContext.CanAdminUserAccess(PropertyRoles.EDIT))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Properties/AddNew") %>">Add New</a></li>
+                            <%}%>
+                            <%if (AAH.SiteContext.CanAdminUserAccess(PropertyRoles.VIEW))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/Properties/ViewAll") %>">View All</a></li>
+                            <%}%>
+                        </ul>
+                    </li>
+                    <%}%>
+                    <%if (AAH.SiteContext.HasAtleastOneRole(NavMenuRoles.ALL))
+                      {%>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nav Menus <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <%if (AAH.SiteContext.CanAdminUserAccess(NavMenuRoles.NEW))
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/NavMenu/Edit") %>">Add New</a></li>
+                            <%}%>
+                            <%if (NavigationMenuList != null && NavigationMenuList.Count > 0 && AAH.SiteContext.CanAdminUserAccess(NavMenuRoles.EDIT))
+                              {%>
+                            <%foreach (var NavMenu in NavigationMenuList)
+                              {%>
+                            <li><a href="<%=Url.Content("~/Admin/NavMenu/Edit?id=" + NavMenu.Id) %>">Edit "<%=NavMenu.UserFriendlyName %>"</a></li>
+                            <%}%>
+                            <%}%>
+                        </ul>
+                    </li>
+                    <%}%>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <%Html.RenderPartial(Url.Content("~/Areas/Admin/Views/Shared/PartialViews/WebUserMessage.ascx")); %>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <script type="text/javascript">
+        $(function ()
+        {
+            $('.timeago').timeago();
+        });
+    </script>
+</asp:Content>

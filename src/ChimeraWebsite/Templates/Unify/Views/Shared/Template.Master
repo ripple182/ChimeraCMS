@@ -1,0 +1,174 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="HeadContent2" ContentPlaceHolderID="HeadContent" runat="server">
+    <%SettingGroup TCS = SettingGroupDAO.LoadSettingGroupByName(SettingGroupKeys.TEMPLATE_CUSTOM_SETTINGS); %>
+    <%Html.RenderPartial(Url.Content("~/Templates/" + AppSettings.ChimeraTemplate + "/Views/Shared/PartialViews/Resources/CSS.ascx"), TCS);%>
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <%SettingGroup TCS = SettingGroupDAO.LoadSettingGroupByName(SettingGroupKeys.TEMPLATE_CUSTOM_SETTINGS); %>
+    <%string PhoneNumber = TCS.GetSettingVal("PhoneNumber"); %>
+    <%string EmailAddress = TCS.GetSettingVal("EmailAddress"); %>
+    <%string PhysicalAddress = TCS.GetSettingVal("PhysicalAddress"); %>
+    <%string FooterAboutUsHeader = TCS.GetSettingVal("FooterAboutUsHeader"); %>
+    <%string FooterAboutUsText = TCS.GetSettingVal("FooterAboutUsText"); %>
+    <%string FooterContactUsHeader = TCS.GetSettingVal("FooterContactUsHeader"); %>
+    <%string FooterStayConnectedHeader = TCS.GetSettingVal("FooterStayConnectedHeader"); %>
+    <%string CopyrightBusinessName = TCS.GetSettingVal("CopyrightBusinessName"); %>
+    <%string PrivacyPolicyUrl = TCS.GetSettingVal("PrivacyPolicyUrl"); %>
+    <%string TermsAndConditionsUrl = TCS.GetSettingVal("TermsAndConditionsUrl"); %>
+    <%bool AllowEcommerce = AppSettings.AllowEcommerce; %>
+    <%int ShoppingCartCount = SiteContext.GetShoppingCartProductListCount();%>
+    <%NavigationMenu MainNavMenu = NavigationMenuDAO.LoadByKeyName(NavigationMenu.MAIN_NAVIGATION_MENU); %>
+    <div class="top">
+        <div class="container">
+            <ul class="loginbar pull-right">
+                <%if (!string.IsNullOrWhiteSpace(PhoneNumber))
+                  {%>
+                <li>
+                    <span class="glyphicon glyphicon-earphone"></span>&nbsp;<%=PhoneNumber %>
+                </li>
+                <%}%>
+                <%if (!string.IsNullOrWhiteSpace(PhoneNumber) && !string.IsNullOrWhiteSpace(EmailAddress))
+                  {%>
+                <li class="devider"></li>
+                <%}%>
+                <%if (!string.IsNullOrWhiteSpace(EmailAddress))
+                  {%>
+                <li>
+                    <span class="glyphicon glyphicon-envelope"></span>&nbsp;<%=EmailAddress %>
+                </li>
+                <%}%>
+                <%if (!string.IsNullOrWhiteSpace(EmailAddress) && !string.IsNullOrWhiteSpace(PhysicalAddress))
+                  {%>
+                <li class="devider"></li>
+                <%}%>
+                <%if (!string.IsNullOrWhiteSpace(PhysicalAddress))
+                  {%>
+                <li>
+                    <span class="glyphicon glyphicon-home"></span>&nbsp;<%=PhysicalAddress %>
+                </li>
+                <%}%>
+            </ul>
+        </div>
+    </div>
+    <div class="header">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <%=TCS.GetSettingVal("WebsiteTitle") %>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <%foreach (var NavMenuLinkChild in MainNavMenu.ChildNavLinks)
+                          {
+                              Html.RenderPartial(Url.Content("~/Templates/Erika/Views/NavMenuViews/MainNavMenu.ascx"), NavMenuLinkChild);
+                          }%>
+                        <%if (AllowEcommerce)
+                          {%>
+                        <li>
+                            <a href="<%=Url.Content("~/ShoppingCart/ViewCart") %>"><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;&nbsp;Cart ( <%=ShoppingCartCount %> )</a>
+                        </li>
+                        <%}%>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <%Html.RenderPartial(Url.Content("~/Views/PartialViews/WebUserMessage.ascx"));%>
+            </div>
+        </div>
+        <div class="row">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <%SettingGroup SMS = SettingGroupDAO.LoadSettingGroupByName(SettingGroupKeys.SOCIAL_MEDIA_SETTINGS); %>
+    <%string SelectedTheme = SMS.GetSettingVal(SocialMediaSettingKeys.SocialMediaIconTheme); %>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <%if (!string.IsNullOrWhiteSpace(FooterAboutUsText) && !string.IsNullOrWhiteSpace(FooterAboutUsHeader))
+                  {%>
+                <div class="col-md-4">
+                    <div class="headline">
+                        <h2><%=FooterAboutUsHeader %></h2>
+                    </div>
+                    <p><%=FooterAboutUsText %></p>
+                </div>
+                <%}%>
+                <div class="col-md-4">
+                    <div class="headline">
+                        <h2><%=FooterContactUsHeader%></h2>
+                    </div>
+                        <%if (!string.IsNullOrWhiteSpace(PhoneNumber))
+                          {%>
+                             <div>
+                                <span class="glyphicon glyphicon-earphone"></span>&nbsp;Phone: <%=PhoneNumber %>
+                             </div>
+                        <%}%>
+                        <%if (!string.IsNullOrWhiteSpace(EmailAddress))
+                          {%>
+                            <div>
+                                <span class="glyphicon glyphicon-envelope"></span>&nbsp;Email: <%=EmailAddress %>
+                            </div>
+                        <%}%>
+                        <%if (!string.IsNullOrWhiteSpace(PhysicalAddress))
+                          {%>
+                            <div>
+                                <span class="glyphicon glyphicon-home"></span>&nbsp;Address: <%=PhysicalAddress %>
+                            </div>
+                        <%}%>
+                </div>
+                <div class="col-md-4">
+                    <div class="headline">
+                        <h2><%=FooterStayConnectedHeader %></h2>
+                    </div>
+                    <div class="social-media-<%=SelectedTheme %>-container">
+                        <%if (SMS.SettingsList != null && SMS.SettingsList.Count > 0)
+                          {%>
+                            <%foreach (var Setting in SMS.SettingsList.Where(e => !e.Key.Equals(SocialMediaSettingKeys.SocialMediaIconTheme)))
+                              {%>
+                                <%if (!string.IsNullOrWhiteSpace(Setting.Value))
+                                  {%>
+                                <a target="_blank" href="<%=Setting.Value %>">
+                                    <div class="social-media-<%=SelectedTheme %> social-media-<%=SelectedTheme %>-<%=Setting.Key %>" title="<%=Setting.Key %>"></div>
+                                </a>
+                                <%}%>
+                            <%}%>
+                        <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="copyright-space">
+                        <%if (!string.IsNullOrWhiteSpace(CopyrightBusinessName))
+                          {%>Copyright &copy; <%=CopyrightBusinessName %>&nbsp;&nbsp;|&nbsp;&nbsp;<%}%>
+                        <%if (!string.IsNullOrWhiteSpace(PrivacyPolicyUrl))
+                          {%><a href="<%=PrivacyPolicyUrl %>">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<%}%>
+                        <%if (!string.IsNullOrWhiteSpace(TermsAndConditionsUrl))
+                          {%><a href="<%=TermsAndConditionsUrl %>">Terms & Conditions</a>&nbsp;&nbsp;|&nbsp;&nbsp;<%}%>
+                        Designed by <a target="_blank" href="http://chrisripple.com">Chris Ripple Freelancing</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="JavascriptContent" runat="server">
+    <%Html.RenderPartial(Url.Content("~/Templates/" + AppSettings.ChimeraTemplate + "/Views/Shared/PartialViews/Resources/JS.ascx"));%>
+</asp:Content>

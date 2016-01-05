@@ -1,0 +1,3 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+<%KnockoutEditableFieldModel MyModel = Model ?? new KnockoutEditableFieldModel(); %>
+<img class="chimera-editable-image" data-bind="visible: $root.currentlyEditingThisModule($parent) && <%=MyModel.KeyForValue %>.Active, click: function(data, event){ $root.uploadImageForModule($parent, '<%=MyModel.KeyForValue%>') } " src="<%=AppSettings.PRODUCTION_GLOBAL_CDN_URL + "IMAGES/editableImageIcon.png" %>" alt="Click to edit image" title="Click to edit image" />

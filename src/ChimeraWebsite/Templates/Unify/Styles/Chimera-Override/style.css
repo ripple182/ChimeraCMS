@@ -1,0 +1,44 @@
+.header .navbar-brand
+{
+    font-size: 25px;
+}
+
+.top
+{
+    padding-top: 18px;
+    padding-bottom: 12px;
+    background-color: #585f69;
+}
+
+.top > .container > ul > li > span
+{
+     color: #f3f1f1;
+}
+
+.top > .container > ul > li
+{
+    color: #dadada;
+}
+
+.top > .container > ul > .devider
+{
+    color: #555;
+}
+
+.header
+{
+    padding-top: 30px!important;
+}
+
+.top ul.loginbar
+{
+    z-index:0!important;
+}
+
+.servive-block .servive-block-in .glyphicon {
+	font-size: 40px;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}

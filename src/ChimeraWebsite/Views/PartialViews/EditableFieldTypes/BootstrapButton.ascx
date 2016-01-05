@@ -1,0 +1,3 @@
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<dynamic>" %>
+<%KnockoutEditableFieldModel MyModel = Model ?? new KnockoutEditableFieldModel(); %>
+<button type="button" class="btn btn-default btn-md" data-bind="visible: $root.currentlyEditingThisModule($parent) && <%=MyModel.KeyForValue %>.Active, click: function(data, event){ $root.setButtonComponentEditing($parent, '<%=MyModel.KeyForValue%>') } "><span class="chimeraIconColor glyphicon glyphicon-pencil"></span>&nbsp;Edit Button</button>

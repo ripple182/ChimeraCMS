@@ -1,0 +1,51 @@
+﻿<!--#
+----#    [#EMAIL_SUBJECT_TEXT#]= [WEBSITE_TITLE] Order Confirmation
+----#
+----#    Email sent to a user after they confirmed the order and it has been recorded to the database.
+----#    
+----#    --------------------EMAIL TOKENS--------------------
+----#    [FIRSTNAME] - the customers first name
+----#    [LASTNAME] - the customers last name
+----#    [ORDER_DATE] - date the order happened
+----#    [ORDER_CONFIRM_NUMBER] - the users order confirm number (order details id)
+----#    [ORDER_DETAILS_TABLE] - the shopping cart table
+----#
+----#    --------------------EMBEDDED IMAGES--------------------
+----#    
+----#
+----#
+#-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body style="background-color: #FFFFFF;" bgcolor="#FFFFFF">
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" style="background-color: #FFFFFF;"
+        bgcolor="#FFFFFF">
+        <tr>
+            <td height="10" colspan="2">
+            </td>
+        </tr>
+        <tr>
+            <table width="550" border="0" bordercolor="FFFFFF" align="center" cellpadding="10"
+                cellspacing="0" style="background-color: #FFFFFF;" bgcolor="#FFFFFF">
+                <tr>
+                    <td colspan="2">
+                        <p style="font-size: 16px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+                            Dear [FIRSTNAME] [LASTNAME],</p>
+                        <p style="font-size: 16px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+                            Thank you for your order on <b>[ORDER_DATE]</b> from [WEBSITE_TITLE]!  You will be notified when your order has been shipped.
+                            <br /><br />
+                            Here is your order confirmation number:&nbsp;&nbsp;<b>[ORDER_CONFIRM_NUMBER]</b>
+                            <br /><br />
+                            [ORDER_DETAILS_TABLE]
+                        </p>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </tr>
+    </table>
+</body>
+</html>

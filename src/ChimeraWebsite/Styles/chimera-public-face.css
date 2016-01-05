@@ -1,0 +1,81 @@
+﻿.chimera-product-list
+{
+     
+}
+
+.chimera-product-list-empty
+{
+     text-align: center;
+     padding: 40px;
+     font-size: 20px;
+     width: 100%;
+     color: black;
+}
+
+.chimera-product-list+div
+{
+    padding: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.c-icon
+{
+    text-align: center;
+    width: 100%;
+}
+
+.c-icon-500
+{
+    font-size: 500px;
+}
+
+.c-icon-450
+{
+    font-size: 450px;
+}
+
+.c-icon-400
+{
+    font-size: 400px;
+}
+
+.c-icon-350
+{
+    font-size: 350px;
+}
+
+.c-icon-300
+{
+    font-size: 300px;
+}
+
+.c-icon-250
+{
+    font-size: 250px;
+}
+
+.c-icon-200
+{
+    font-size: 200px;
+}
+
+.c-icon-150
+{
+    font-size: 150px;
+}
+
+.c-icon-100
+{
+    font-size: 100px;
+}
+
+.c-icon-50
+{
+    font-size: 50px;
+}
+
+.c-icon-25
+{
+    font-size: 25px;
+}

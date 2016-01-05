@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SettingGroups>
+  <SettingGroup>
+    <GroupKey>PayPalPurchaseSettings</GroupKey>
+    <UserFriendlyName>PayPal / Purchase Settings</UserFriendlyName>
+    <Description>The settings used when using PayPal for eCommerce purchases, also includes the base tax and base shipping amounts.</Description>
+    <ParentCategory>2</ParentCategory>
+    <SettingsList>
+      <Setting>
+        <Key>GlobalBaseShippingAmt_USPS</Key>
+        <UserFriendlyName>USPS Base Shipping Amount</UserFriendlyName>
+        <Description>The dollar amount base shipping price for all orders, i.e. all orders have a base of $5 shipping for USPS plus their custom shipping amount defined on the edit Product page.</Description>
+        <Value>5</Value>
+        <EntryType>5</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>GlobalBaseShippingAmt_FedEx</Key>
+        <UserFriendlyName>FedEx Base Shipping Amount</UserFriendlyName>
+        <Description>The dollar amount base shipping price for all orders, i.e. all orders have a base of $5 shipping for FedEx plus their custom shipping amount defined on the edit Product page.</Description>
+        <Value>5</Value>
+        <EntryType>5</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>GlobalBaseShippingAmt_UPS</Key>
+        <UserFriendlyName>UPS Base Shipping Amount</UserFriendlyName>
+        <Description>The dollar amount base shipping price for all orders, i.e. all orders have a base of $5 shipping for UPS plus their custom shipping amount defined on the edit Product page.</Description>
+        <Value>5</Value>
+        <EntryType>5</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>GlobalTaxAmount</Key>
+        <UserFriendlyName>Tax Percentage Amount</UserFriendlyName>
+        <Description>The decimal amount of tax to add to all eCommerce orders, i.e. "0.06".</Description>
+        <Value>0.06</Value>
+        <EntryType>6</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>StockLevelWarning</Key>
+        <UserFriendlyName>Stock Level Warning</UserFriendlyName>
+        <Description>When the stock level of any product reaches this number it will create a new "low" stock level notification.</Description>
+        <Value>5</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_API</Key>
+        <UserFriendlyName>PayPal API URL</UserFriendlyName>
+        <Description>The URL used to communicate with the PayPal API.  Either uses the SANDBOX or PRODUCTION PayPal API.</Description>
+        <Value>https://api-3t.sandbox.paypal.com/</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_REDIRECT</Key>
+        <UserFriendlyName>PayPal Redirect URL</UserFriendlyName>
+        <Description>The URL that redirects the user to whenever they first confirm the purchase items.  Either uses the SANDBOX or PRODUCTION PayPal API.</Description>
+        <Value>https://www.sandbox.paypal.com/webscr</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_Username</Key>
+        <UserFriendlyName>PayPal Username</UserFriendlyName>
+        <Description>Used to communicate safe transactions with your PayPal account.</Description>
+        <Value>ripple182-facilitator_api1.gmail.com</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_Password</Key>
+        <UserFriendlyName>PayPal Password</UserFriendlyName>
+        <Description>Used to communicate safe transactions with your PayPal account.</Description>
+        <Value>1374115631</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_Signature</Key>
+        <UserFriendlyName>PayPal Signature</UserFriendlyName>
+        <Description>Used to communicate safe transactions with your PayPal account.</Description>
+        <Value>ABgkyNkxv-WiD1DuA7jeHIXuQyF8ARVAyBOvWGOVVqT-.0NSlZW4EmSp</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_HDRIMG</Key>
+        <UserFriendlyName>PayPal Store Image</UserFriendlyName>
+        <Description>The image used to show what store the customer is making purchases at.  This shows up during the user's checkout on the PayPal screen.  AlphaNumeric value only, maximum url can be 127 characters.</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PayPal_CheckoutBtn_Img</Key>
+        <UserFriendlyName>PayPal Button Img</UserFriendlyName>
+        <Description>The image displayed on the shopping cart screen that shows the customer they are checking out using PayPal.</Description>
+        <Value></Value>
+        <EntryType>4</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList></SettingAttributeList>
+      </Setting>
+    </SettingsList>
+  </SettingGroup>
+</SettingGroups>

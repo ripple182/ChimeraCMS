@@ -1,0 +1,49 @@
+﻿.social-media-FlatTheme
+{
+    background-image:url('../Images/SocialMediaThemes/FlatTheme/35x35.png');
+}
+
+.social-media-FlatTheme-Facebook
+{
+    background-position:0px 0px;
+}
+
+.social-media-FlatTheme-GooglePlus
+{
+    background-position: -36px 0px;
+}
+
+.social-media-FlatTheme-Instagram
+{
+    background-position: -72px 0px;
+}
+
+.social-media-FlatTheme-Linkedin
+{
+    background-position: 0px -36px;
+}
+
+.social-media-FlatTheme-Pinterest
+{
+    background-position: -36px -36px;
+}
+
+.social-media-FlatTheme-Vine
+{
+    background-position: -72px -36px;
+}
+
+.social-media-FlatTheme-Tumblr
+{
+    background-position: 0px -72px;
+}
+
+.social-media-FlatTheme-Twitter
+{
+    background-position: -36px -72px;
+}
+
+.social-media-FlatTheme-Youtube
+{
+    background-position: -72px -72px;
+}

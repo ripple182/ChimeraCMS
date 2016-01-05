@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StaticProperties>
+  <StaticProperty>
+    <KeyName>SearchProperties</KeyName>
+    <PropertyNameValues>
+      <Value>Color</Value>
+      <Value>Width</Value>
+      <Value>Size</Value>
+    </PropertyNameValues>
+  </StaticProperty>
+  <StaticProperty>
+    <KeyName>CheckoutProperties</KeyName>
+    <PropertyNameValues>
+      <Value>Color</Value>
+      <Value>Width</Value>
+      <Value>Size</Value>
+    </PropertyNameValues>
+  </StaticProperty>
+  <StaticProperty>
+    <KeyName>ShippingMethodProperties</KeyName>
+    <PropertyNameValues>
+      <Value>UPS</Value>
+      <Value>FedEx</Value>
+      <Value>USPS</Value>
+    </PropertyNameValues>
+  </StaticProperty>
+</StaticProperties>

@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%PageModel PageModel = ViewBag.PageModel ?? new PageModel(); %>
+<%string TemplateName = ChimeraWebsite.Models.ChimeraTemplate.TemplateName; %>
+<!DOCTYPE html>
+<html>
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%Html.RenderPartial(Url.Content("~/Views/PartialViews/AllSEOSection.ascx"));%>
+    <%Html.RenderPartial(Url.Content("~/Views/PartialViews/Resources/Global/CSS.ascx"));%>
+
+    <%PageModel PageModel = ViewBag.PageModel ?? new PageModel(); %>
+    <%if(PageModel.InEditMode)
+      {%>
+        <%Html.RenderPartial(Url.Content("~/Views/PartialViews/Resources/Editor/CSS.ascx"));%>
+    <%}%>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body <%if(ViewBag.PreviewPageData == null && PageModel.InEditMode){%> class="bodyInEditMode" <%}%>>
+    <%if(PageModel.InEditMode)
+      {%>
+        <%Html.RenderPartial(Url.Content("~/Views/PartialViews/AdminEditMenuHTML.ascx")); %>
+    <%}%>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+    <%Html.RenderPartial(Url.Content("~/Views/PartialViews/Resources/Global/JS.ascx"));%>
+    <%if(PageModel.InEditMode)
+      {%>
+        <%Html.RenderPartial(Url.Content("~/Views/PartialViews/Resources/Editor/JS.ascx"));%>
+    <%}%>
+    <script type="text/javascript">
+
+        var No_Products_Found_Default_Message = "<%=ConfigurationManager.AppSettings["No_Products_Found_Default_Message"]%>";
+
+        var PRODUCTION_GLOBAL_CDN_URL = '<%=AppSettings.PRODUCTION_GLOBAL_CDN_URL%>';
+
+        var BASE_AJAX_PATH = '<%=ConfigurationManager.AppSettings["BaseWebsiteURL"]%>';
+
+        $(function ()
+        {
+            Chimera_OnAddOrOnLoad();
+
+            Chimera_ProductViewLoad();
+
+            Chimera_ShoppingCartViewLoad();
+        });
+        
+    </script>
+    <asp:ContentPlaceHolder ID="JavascriptContent" runat="server"></asp:ContentPlaceHolder>
+    <%if(PageModel.InEditMode)
+      {%>
+    <%Html.RenderPartial(Url.Content("~/Views/PartialViews/AdminEditMenuJS.ascx")); %>
+    <%}%>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Admin</title>
+    <%Html.RenderPartial(Url.Content("~/Areas/Admin/Views/Shared/PartialViews/Resources/CSS.ascx"));%>
+</head>
+<body>
+    <%Html.RenderPartial(Url.Content("~/Areas/Admin/Views/Shared/PartialViews/Resources/JS.ascx"));%>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+</body>
+</html>

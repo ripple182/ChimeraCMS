@@ -1,0 +1,37 @@
+.note-fontsize .dropdown-menu
+{
+    background-color: #ffffff!important;
+}
+
+.note-fontsize .dropdown-menu > li
+{
+    background-image: none!important;
+    padding: 0!important;
+    background-color: #ffffff!important;
+}
+
+.note-fontsize .dropdown-menu > li > a
+{
+    background-color: #ffffff!important;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.note-color .dropdown-menu
+{
+    width: 340px!important;
+}
+
+.note-color .dropdown-menu > li > .btn-group+.btn-group
+{
+    margin-left: 10px!important;
+}
+
+.note-editable
+{
+    cursor: text!important;
+}
+
+.note-dialog
+{
+    cursor: auto!important;
+}

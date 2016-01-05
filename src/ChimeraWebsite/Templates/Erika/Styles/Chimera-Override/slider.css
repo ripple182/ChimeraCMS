@@ -1,0 +1,23 @@
+.da-slide .da-link
+{
+    left: 10%;
+	opacity: 1;
+    position: absolute;
+    top: 200px; /*depends on p height*/
+}
+
+.da-slide .da-link a.btn-default
+{
+    color: #333!important;
+}
+
+.da-slide .da-link a.btn-primary, .da-link a.btn-success, .da-link a.btn-info, .da-link a.btn-warning, .da-link a.btn-danger
+{
+    color: white!important;
+}
+
+.nav-tabs > li
+{
+    background-image: none!important;
+}
+

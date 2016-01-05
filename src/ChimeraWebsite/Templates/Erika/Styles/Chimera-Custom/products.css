@@ -1,0 +1,54 @@
+.prodList_basicList
+{
+    text-align: center;
+}
+
+.prodList_basicList > .well > .img-thumbnail
+{
+    width: 100%!important;
+}
+
+.prodList_basicList > .well > div
+{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.prodViewMaster
+{
+    text-align: center;
+}
+
+.prodViewMaster h1
+{
+    color: #8a9c10;
+}
+
+.prodViewMaster > .col-md-6 > .img-thumbnail
+{
+    width: 100%!important;
+}
+
+.prodViewMaster > .col-md-2 > .thumbnail
+{
+    width: 88px;
+    height: 88px;
+    display: block;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 6px;
+    float: right;
+    text-align: center;
+}
+
+.prodViewMaster > .col-md-2 > .thumbnail > img
+{
+    cursor: pointer;
+}
+
+.prodViewMaster > .col-md-10 > p
+{
+    padding-top: 10px;
+    font-size: 16px;
+    text-align: left;
+}

@@ -1,0 +1,42 @@
+﻿.chimera-gallery-image-thumbnail
+{
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+    overflow: hidden;
+    display: inline-block!important;
+    margin-left: 5px;
+}
+
+    .chimera-gallery-image-thumbnail:hover
+    {
+        opacity: 0.5;
+    }
+
+    .chimera-gallery-image-thumbnail img
+    {
+        width: 75px;
+        height: auto;
+    }
+
+.btn-file
+{
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-file input[type=file]
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 100%;
+        min-height: 100%;
+        font-size: 999px;
+        text-align: right;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        background: red;
+        cursor: inherit;
+        display: block;
+    }

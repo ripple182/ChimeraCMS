@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F98604F-2176-4EA5-869E-88718486DC08}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChimeraWebsite</RootNamespace>
+    <AssemblyName>ChimeraWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK">
+      <HintPath>..\..\lib\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="CompanyCommons, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\CompanyCommons.dll</HintPath>
+    </Reference>
+    <Reference Include="CompanyCommons.AWS.S3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\CompanyCommons.AWS.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="CompanyCommons.Ecommerce.PayPal, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\CompanyCommons.Ecommerce.PayPal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.2.0.262, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MongoDB.Bson.2.2.0\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.2.0.262, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MongoDB.Driver.2.2.0\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.2.0\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="UAParser">
+      <HintPath>..\packages\UAParser.1.0.2.0\lib\net40\UAParser.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\packages\YamlDotNet.3.0.0\lib\net35\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Attributes\AdminUserAccess.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NavMenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PropertiesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PurchaseOrdersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SettingsController.cs" />
+    <Compile Include="Areas\Admin\Helpers\SiteContext.cs" />
+    <Compile Include="Areas\Admin\Models\PartialViews\DataEntryFormField.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\PageExitController.cs" />
+    <Compile Include="Controllers\SearchProductsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UploadController.cs" />
+    <Compile Include="Areas\Admin\Models\AdminUser.cs" />
+    <Compile Include="Areas\Admin\Models\PartialViews\EditProductPropertyTable.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\ViewProductController.cs" />
+    <Compile Include="Helpers\AppCache.cs" />
+    <Compile Include="Helpers\AppSettings.cs" />
+    <Compile Include="Helpers\ShippingMethod.cs" />
+    <Compile Include="Helpers\SiteContext.cs" />
+    <Compile Include="Models\ChimeraTemplate.cs" />
+    <Compile Include="Models\ColumnModuleModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order\PayPalSuccessModel.cs" />
+    <Compile Include="Models\Product\ProductListModel.cs" />
+    <Compile Include="Models\Editor\SpecialHTMLElement.cs" />
+    <Compile Include="Models\Editor\EditableFieldTypes.cs" />
+    <Compile Include="Models\PartialColumnModuleModel.cs" />
+    <Compile Include="Models\Editor\AvailableIcons.cs" />
+    <Compile Include="Models\Editor\CacheInitializer.cs" />
+    <Compile Include="Models\Editor\ColumnModuleType.cs" />
+    <Compile Include="Models\Editor\ColumnModuleTypeCategory.cs" />
+    <Compile Include="Models\Editor\DefaultTokenValues.cs" />
+    <Compile Include="Models\Editor\KnockoutEditableFieldModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Models\Product\ProductModel.cs" />
+    <Compile Include="Models\ShoppingCart\ShoppingCartModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\DEV_DefaultChimeraModuleValues.txt" />
+    <Content Include="App_Data\PROD_DefaultChimeraModuleValues.txt" />
+    <Content Include="App_Data\DefaultChimeraModuleValues.txt" />
+    <Content Include="Areas\Admin\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Images\lastnode.png" />
+    <Content Include="Areas\Admin\Images\node.png" />
+    <Content Include="Areas\Admin\Images\vline.png" />
+    <Content Include="Areas\Admin\Scripts\ChimeraAdmin\dashboard.js" />
+    <Content Include="Areas\Admin\Scripts\ChimeraAdmin\edit-settingGroupValues.js" />
+    <Content Include="Areas\Admin\Scripts\ChimeraAdmin\edit-navigationMenu.js" />
+    <Content Include="Areas\Admin\Scripts\ChimeraAdmin\edit-staticProperties.js" />
+    <Content Include="Areas\Admin\Scripts\ChimeraAdmin\edit-settingGroupSchema.js" />
+    <Content Include="Areas\Admin\Scripts\ChimeraAdmin\edit-product.js" />
+    <Content Include="Areas\Admin\Scripts\exporting.js" />
+    <Content Include="Areas\Admin\Scripts\highcharts.js" />
+    <Content Include="Areas\Admin\Scripts\timeago.js" />
+    <Content Include="Areas\Admin\Styles\ChimeraAdmin\customstyle.css" />
+    <Content Include="Areas\Admin\Views\AdminUser\Edit.aspx" />
+    <Content Include="Areas\Admin\Views\NavMenu\Edit.aspx" />
+    <Content Include="Areas\Admin\Views\Page\Edit.aspx" />
+    <Content Include="Areas\Admin\Views\Page\ViewPageHistory.aspx" />
+    <Content Include="Areas\Admin\Views\Page\ViewAllPageTypes.aspx" />
+    <Content Include="Areas\Admin\Views\Properties\AddNew.aspx" />
+    <Content Include="Areas\Admin\Views\Properties\Edit.aspx" />
+    <Content Include="Areas\Admin\Views\Properties\ViewAll.aspx" />
+    <Content Include="Areas\Admin\Views\AdminUser\ViewAll.aspx" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.aspx" />
+    <Content Include="Areas\Admin\Views\PurchaseOrders\Edit.aspx" />
+    <Content Include="Areas\Admin\Views\PurchaseOrders\Search.aspx" />
+    <Content Include="Areas\Admin\Views\Settings\EditSchema.aspx" />
+    <Content Include="Areas\Admin\Views\Settings\ViewAll.aspx" />
+    <Content Include="Areas\Admin\Views\Settings\EditValues.aspx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\Dashboard\Notifications.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\Dashboard\Report.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\Resources\CSS.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\Resources\JS.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\ViewSettingsTable.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\EditSettingGroupValueImageDialog.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\EditNavigationMenuLinkDialog.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\SearchProductPropertyTable.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\EditProductPurchaseSettings.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\EditProductPropertyTable.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\EditProductImageDialog.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\DataEntryFormFields.ascx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\WebUserMessage.ascx" />
+    <Content Include="Areas\Admin\Views\Product\Edit.aspx" />
+    <Content Include="Areas\Admin\Views\Product\Search.aspx" />
+    <Content Include="Areas\Admin\Views\Shared\PartialViews\EditProductPropertyDialog.ascx" />
+    <Content Include="Styles\social-media-FlatTheme.css" />
+    <Content Include="Templates\Erika\Views\PageNotFoundViews\BasicView.ascx" />
+    <Content Include="Templates\Unify\Styles\page_search.css" />
+    <Content Include="Templates\Unify\App_Data\GlyphiconHalflings.txt" />
+    <Content Include="Templates\Unify\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Unify\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Templates\Unify\Images\bg-black.png" />
+    <Content Include="Templates\Unify\Images\bg-black1.png" />
+    <Content Include="Templates\Unify\Images\bg-green.png" />
+    <Content Include="Templates\Unify\Images\bg-white.png" />
+    <Content Include="Templates\Unify\Images\breadcrumbs.png" />
+    <Content Include="Templates\Unify\Images\Flexslider\bg_direction_nav.png" />
+    <Content Include="Templates\Unify\Images\Flexslider\bg_direction_nav1.png" />
+    <Content Include="Templates\Unify\Images\overlay-icon.png" />
+    <Content Include="Templates\Unify\Images\up.png" />
+    <Content Include="Templates\Unify\Scripts\app.js" />
+    <Content Include="Templates\Unify\Scripts\back-to-top.js" />
+    <Content Include="Templates\Unify\Scripts\bootstrap.js" />
+    <Content Include="Templates\Unify\Scripts\Chimera\OnAddOrOnLoad.js" />
+    <Content Include="Templates\Unify\Scripts\Chimera\ProductViewLoad.js" />
+    <Content Include="Templates\Unify\Scripts\Chimera\ShoppingCartViewLoad.js" />
+    <Content Include="Templates\Unify\Scripts\hover-dropdown.min.js" />
+    <Content Include="Templates\Unify\Scripts\index.js" />
+    <Content Include="Templates\Unify\Scripts\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Templates\Unify\Scripts\jquery.flexslider.js" />
+    <Content Include="Templates\Unify\Scripts\respond.js" />
+    <Content Include="Templates\Unify\Styles\app.css" />
+    <Content Include="Templates\Unify\Styles\bootstrap.css" />
+    <Content Include="Templates\Unify\Styles\Chimera-Custom\common.css" />
+    <Content Include="Templates\Unify\Styles\Chimera-Custom\products.css" />
+    <Content Include="Templates\Unify\Styles\Chimera-Custom\shoppingCart.css" />
+    <Content Include="Templates\Unify\Styles\Chimera-Custom\social-media.css" />
+    <Content Include="Templates\Unify\Styles\Chimera-Override\style.css" />
+    <Content Include="Templates\Unify\Styles\color-blue.css" />
+    <Content Include="Templates\Unify\Styles\color-default.css" />
+    <Content Include="Templates\Unify\Styles\color-light.css" />
+    <Content Include="Templates\Unify\Styles\color-orange.css" />
+    <Content Include="Templates\Unify\Styles\color-red.css" />
+    <Content Include="Templates\Unify\Styles\flexslider.css" />
+    <Content Include="Templates\Unify\Styles\font-awesome-ie7.min.css" />
+    <Content Include="Templates\Unify\Styles\font-awesome.css" />
+    <Content Include="Templates\Unify\Styles\header1-blue.css" />
+    <Content Include="Templates\Unify\Styles\header1-light.css" />
+    <Content Include="Templates\Unify\Styles\header1-orange.css" />
+    <Content Include="Templates\Unify\Styles\header1-red.css" />
+    <Content Include="Templates\Unify\Styles\header1.css" />
+    <Content Include="Templates\Unify\Styles\header2-blue.css" />
+    <Content Include="Templates\Unify\Styles\header2-light.css" />
+    <Content Include="Templates\Unify\Styles\header2-orange.css" />
+    <Content Include="Templates\Unify\Styles\header2-red.css" />
+    <Content Include="Templates\Unify\Styles\header2.css" />
+    <Content Include="Templates\Unify\Styles\responsive.css" />
+    <Content Include="Templates\Unify\Styles\style.css" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_SquareIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ClientTestimonialSlideshow_2_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_GreenIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_RedIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_SeaIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_GreyIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_DefaultIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_BlueIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_OrangeIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_YellowIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ClientTestimonialSlideshow_3_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ClientTestimonialSlideshow_4_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ClientTestimonialSlideshow_5_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Blurbs_BorderedIconBlurb.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\MultiContentHolders_SideTabContent.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\MultiContentHolders_DefaultTabContent.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\MultiContentHolders_GreenTabContent.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\MultiContentHolders_NormalAccordionContent.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelRed.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelBlue.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelSea.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelGreen.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelOrange.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelYellow.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Panels_PanelGrey.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\PartialModuleViews\NormalAccordionContent_Accordion.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\SingleDisplayImages_ReadMoreThumbnail.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Taglines_DescriptionBorderBottom.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Taglines_TitleButtonCutout.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Taglines_DescriptionTitleCutout.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Taglines_DescriptionTitleNoBorder.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Taglines_DescriptionBorderLeft.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Taglines_DescriptionBorderTop.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\HeadersAndDescriptions_BlueBoxDescription.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\HeadersAndDescriptions_RedBoxDescription.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\HeadersAndDescriptions_SeaBoxDescription.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\HeadersAndDescriptions_GreyBoxDescription.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\HeadersAndDescriptions_LeftBorderedDescription.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ImageCaptionSlideshow_3_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ImageCaptionSlideshow_4_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ImageCaptionSlideshow_5_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\HeadersAndDescriptions_SimpleTitleOnly.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\ImageCaptionSlideshow_2_Slides.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Other_FullWidthAttention.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\Other_LeftBorderedTestimonial.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\PartialModuleViews\ClientTestimonialSlideshow_Slide.ascx" />
+    <Content Include="Templates\Unify\Views\ModuleViews\PartialModuleViews\ImageCaptionSlideshow_Slide.ascx" />
+    <Content Include="Templates\Unify\Views\NavMenuViews\MainNavMenu.ascx" />
+    <Content Include="Templates\Unify\Views\OrderViews\FinalCheckout\BasicView.ascx" />
+    <Content Include="Templates\Unify\Views\OrderViews\ShoppingCart\BasicView.ascx" />
+    <Content Include="Templates\Unify\Views\OrderViews\SuccessfulOrder\BasicView.ascx" />
+    <Content Include="Templates\Unify\Views\PageNotFoundViews\BasicView.ascx" />
+    <Content Include="Templates\Unify\Views\ProductViews\Lists\ProductList_BasicList.ascx" />
+    <Content Include="Templates\Unify\Views\ProductViews\Views\BasicView.ascx" />
+    <Content Include="Templates\Unify\Views\Shared\PartialViews\Resources\CSS.ascx" />
+    <Content Include="Templates\Unify\Views\Shared\PartialViews\Resources\JS.ascx" />
+    <Content Include="Templates\Unify\Views\WebUserMessage\BasicView.ascx" />
+    <Content Include="Templates\Erika\App_Data\GlyphiconHalflings.txt" />
+    <Content Include="Templates\Erika\Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Images\defaultImage.png" />
+    <Content Include="Images\defaultImage_superwide.png" />
+    <Content Include="Images\defaultImage_wide.png" />
+    <Content Include="Images\desktopIcon.png" />
+    <Content Include="Images\phoneIcon.png" />
+    <Content Include="Images\smallDesktopIcon.png" />
+    <Content Include="Images\SocialMediaThemes\FlatTheme\35x35.png" />
+    <Content Include="Images\tabletIcon.png" />
+    <Content Include="Images\editableImageIcon.png" />
+    <Content Include="Scripts\bootstrap-colorpicker.min.js" />
+    <Content Include="Templates\Erika\Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chimera-toolbar.js" />
+    <Content Include="Scripts\codemirror.js" />
+    <Content Include="Scripts\codemirror\mode\xml\index.html" />
+    <Content Include="Scripts\codemirror\mode\xml\xml.js" />
+    <Content Include="Scripts\chimera-common-utility.js" />
+    <Content Include="Scripts\chimera-common-public-face.js" />
+    <Content Include="Scripts\EditScreenDialogs\cimera-toolbar-edit-productSearch.js" />
+    <Content Include="Scripts\formatting.min.js" />
+    <Content Include="Scripts\EditScreenDialogs\chimera-toolbar-edit-icon.js" />
+    <Content Include="Scripts\EditScreenDialogs\chimera-toolbar-edit-image.js" />
+    <Content Include="Scripts\EditScreenDialogs\chimera-toolbar-edit-button.js" />
+    <Content Include="Scripts\EditScreenDialogs\WYSIWYG\chimera-wysiwyg-icon.js" />
+    <Content Include="Scripts\EditScreenDialogs\WYSIWYG\chimera-wysiwyg-hyperlink.js" />
+    <Content Include="Scripts\EditScreenDialogs\WYSIWYG\chimera-wysiwyg-utility-functions.js" />
+    <Content Include="Scripts\EditScreenDialogs\WYSIWYG\chimera-wysiwyg-button.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.fileupload.js" />
+    <Content Include="Scripts\jquery.iframe-transport.js" />
+    <Content Include="Scripts\knockout-mapping.js" />
+    <Content Include="Scripts\knockout-3.0.0.js" />
+    <Content Include="Scripts\knockout-sortable.min.js" />
+    <Content Include="Scripts\EditScreenDialogs\chimera-toolbar-module-settings.js" />
+    <Content Include="Scripts\summernote.min.js" />
+    <Content Include="Styles\bootstrap-colorpicker.min.css" />
+    <Content Include="Styles\chimera.css" />
+    <Content Include="Styles\bootstrap-colorpicker-override.css" />
+    <Content Include="Styles\codemirror.css" />
+    <Content Include="Styles\codemirror\theme\blackboard.css" />
+    <Content Include="Styles\chimera-image-upload.css" />
+    <Content Include="Styles\chimera-public-face.css" />
+    <Content Include="Styles\summernote-bs3-override.css" />
+    <Content Include="Styles\jquery.fileupload-ui-noscript.css" />
+    <Content Include="Styles\jquery.fileupload-ui.css" />
+    <Content Include="Styles\jqueryui\images\animated-overlay.gif" />
+    <Content Include="Styles\jqueryui\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\jqueryui\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\jqueryui\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\jqueryui\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\jqueryui\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\jqueryui\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\jqueryui\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\jqueryui\jquery-ui.min.css" />
+    <Content Include="Styles\summernote-bs3.css" />
+    <Content Include="Styles\summernote.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Templates\Erika\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Templates\Erika\Images\bg_direction_nav.png" />
+    <Content Include="Templates\Erika\Images\body-back.png" />
+    <Content Include="Templates\Erika\Images\dot.png" />
+    <Content Include="Templates\Erika\Images\fback.png" />
+    <Content Include="Templates\Erika\Images\header-back.png" />
+    <Content Include="Templates\Erika\Images\list-b.png" />
+    <Content Include="Templates\Erika\Images\list-g.png" />
+    <Content Include="Templates\Erika\Images\list-o.png" />
+    <Content Include="Templates\Erika\Images\list-p.png" />
+    <Content Include="Templates\Erika\Images\list-r.png" />
+    <Content Include="Templates\Erika\Images\list-y.png" />
+    <Content Include="Templates\Erika\Images\parallax\arrows.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\loader.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\sprite.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Templates\Erika\Images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Templates\Erika\Scripts\Chimera\ShoppingCartViewLoad.js" />
+    <Content Include="Templates\Erika\Scripts\Chimera\ProductViewLoad.js" />
+    <Content Include="Templates\Erika\Scripts\Chimera\OnAddOrOnLoad.js" />
+    <Content Include="Templates\Erika\Scripts\filter.js" />
+    <Content Include="Templates\Erika\Scripts\html5shim.js" />
+    <Content Include="Templates\Erika\Scripts\html5shiv.js" />
+    <Content Include="Templates\Erika\Scripts\jquery.cslider.js" />
+    <Content Include="Templates\Erika\Scripts\jquery.flexslider-min.js" />
+    <Content Include="Templates\Erika\Scripts\jquery.isotope.js" />
+    <Content Include="Templates\Erika\Scripts\jquery.prettyPhoto.js" />
+    <Content Include="Templates\Erika\Scripts\modernizr.custom.28468.js" />
+    <Content Include="Templates\Erika\Styles\blue.css" />
+    <Content Include="Templates\Erika\Styles\bootstrap.css" />
+    <Content Include="Templates\Erika\Styles\brown.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Custom\common.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Custom\shoppingCart.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Custom\social-media.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Custom\products.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Override\flexslider.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Override\slider.css" />
+    <Content Include="Templates\Erika\Styles\Chimera-Override\style.css" />
+    <Content Include="Templates\Erika\Styles\flexslider.css" />
+    <Content Include="Templates\Erika\Styles\font-awesome-ie7.css" />
+    <Content Include="Templates\Erika\Styles\font-awesome.css" />
+    <Content Include="Templates\Erika\Styles\green.css" />
+    <Content Include="Templates\Erika\Styles\orange.css" />
+    <Content Include="Templates\Erika\Styles\pink.css" />
+    <Content Include="Templates\Erika\Styles\prettyPhoto.css" />
+    <Content Include="Templates\Erika\Styles\red.css" />
+    <Content Include="Templates\Erika\Styles\slider.css" />
+    <Content Include="Templates\Erika\Styles\style.css" />
+    <Content Include="Templates\_DefaultTemplate\Views\PageNotFoundViews\BasicView.ascx" />
+    <Content Include="Views\Home\PageNotFound.aspx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_PanelPrimary.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_PanelSuccess.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_PanelInfo.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_PanelWarning.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_PanelDanger.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_PanelDefault.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AlertInfo.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AlertWarning.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AlertDanger.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AlertSuccess.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize450.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize400.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize350.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize300.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize250.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize200.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize150.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize100.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize50.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize25.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_IconSize500.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AdjustableCircleImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AdjustableDefaultImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AdjustableRoundedCornerImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_AdjustableThumbnailImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_NonAdjustableCircleImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_NonAdjustableThumbnailImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_NonAdjustableDefaultImage.ascx" />
+    <Content Include="Views\PartialViews\CommonModuleViews\_Common_NonAdjustableRoundedCornerImage.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeImageSlideshow_4_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeImageSlideshow_5_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageOnlySlideshow_3_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageOnlySlideshow_4_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageOnlySlideshow_5_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeDescriptionSlideshow_5_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeDescriptionSlideshow_4_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeDescriptionSlideshow_3_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\PartialModuleViews\LargeDescriptionSlideshow_Slide.ascx" />
+    <Content Include="Templates\Erika\Views\NavMenuViews\MainNavMenu.ascx" />
+    <Content Include="Templates\Erika\Views\OrderViews\ShoppingCart\BasicView.ascx" />
+    <Content Include="Templates\Erika\Views\OrderViews\SuccessfulOrder\BasicView.ascx" />
+    <Content Include="Templates\Erika\Views\ProductViews\Lists\ProductList_BasicList.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ProductList_BasicList.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Other_CustomHTMLContent.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageGallery_LargePortfolioGallery.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageGallery_LargePhotoGallery.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageGallery_NormalPortfolioGallery.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageGallery_NormalPhotoGallery.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\MultiContentHolders_EventAccordionContent.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\PartialModuleViews\EventAccordionContent_Accordion.ascx" />
+    <Content Include="Templates\Erika\Views\ProductViews\Views\BasicView.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Other_SingleTimelineSquare.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\PartialModuleViews\ImageOnlySlideshow_Slide.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\ImageOnlySlideshow_2_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\MultiContentHolders_MultiAccordionContent.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\MultiContentHolders_MultiTabContent.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Blurbs_MediumIconBlurb.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\HeadersAndDescriptions_FullWidthDescription.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\PartialModuleViews\MultiAccordionContent_Accordion.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Blurbs_SquareIconBlurb.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Blurbs_SquareImageBlurb.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\HeadersAndDescriptions_SimpleTitleOnly.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeImageSlideshow_3_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeImageSlideshow_2_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\LargeDescriptionSlideshow_2_Slides.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\PartialModuleViews\LargeImageSlideshow_Slide.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Other_SquareRoundedTestimonial.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Other_SquareSharpTestimonial.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Other_FullWidthAttention.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Blurbs_MediumBoxBlurb.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\HeadersAndDescriptions_TitleSubtitleDescription.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Blurbs_SmallCircleBlurb.ascx" />
+    <Content Include="Templates\Erika\Views\OrderViews\FinalCheckout\BasicView.ascx" />
+    <Content Include="Templates\Erika\Views\Shared\PartialViews\Resources\CSS.ascx" />
+    <Content Include="Templates\Erika\Views\Shared\PartialViews\Resources\JS.ascx" />
+    <Content Include="Templates\Erika\Views\WebUserMessage\BasicView.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Scripts\Chimera\OnAddOrOnLoad.js" />
+    <Content Include="Templates\_DefaultTemplate\Scripts\Chimera\ProductViewLoad.js" />
+    <Content Include="Templates\_DefaultTemplate\Scripts\Chimera\ShoppingCartViewLoad.js" />
+    <Content Include="Templates\_DefaultTemplate\Views\NavMenuViews\MainNavMenu.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\OrderViews\FinalCheckout\BasicView.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\OrderViews\ShoppingCart\BasicView.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\OrderViews\SuccessfulOrder\BasicView.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\ProductViews\Lists\ProductList_BasicList.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\ProductViews\Views\BasicView.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\Shared\PartialViews\Resources\CSS.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\Shared\PartialViews\Resources\JS.ascx" />
+    <Content Include="Templates\_DefaultTemplate\Views\WebUserMessage\BasicView.ascx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\Other_FullWidthBreak.ascx" />
+    <Content Include="Templates\Erika\Views\ModuleViews\HeadersAndDescriptions_BreakTitleDescription.ascx" />
+    <Content Include="Views\Order\FinalCheckout.aspx" />
+    <Content Include="Views\Order\PayPalSuccess.aspx" />
+    <Content Include="Views\PartialViews\AdminEditMenuHTML.ascx" />
+    <Content Include="Views\PartialViews\AdminEditMenuJS.ascx" />
+    <Content Include="Views\PartialViews\AllSEOSection.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\BootstrapButton.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\EditSearchProductFilters.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\LargeHTML.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\ExtraSmallText.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\IconSelect.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\LargeWYSIWYG.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\ImageSelect.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\LargeText.ascx" />
+    <Content Include="Views\PartialViews\EditableFieldTypes\SmallText.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\EditSearchProductFiltersDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\EditBootstrapButtonDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\ModuleSettings\RowModuleSettingsDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\SelectNewIconDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\ModuleSettings\ChildComponentActiveTab.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\ModuleSettings\DeviceSizeTab.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\ModuleSettings\ModuleSettingsDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\UploadNewImageDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\ModuleSettings\DeviceVisibilityTab.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\WYSIWYG\IconDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\WYSIWYG\ButtonDialog.ascx" />
+    <Content Include="Views\PartialViews\EditScreenDialogs\WYSIWYG\HyperlinkDialog.ascx" />
+    <Content Include="Views\PartialViews\KnockoutEditableField.ascx" />
+    <Content Include="Views\PartialViews\Products\CheckoutPropertySettingHiddenInputs.ascx" />
+    <Content Include="Views\PartialViews\Products\ShoppingCartCustomShippingHandling.ascx" />
+    <Content Include="Views\PartialViews\Resources\Editor\JS_ADMIN_BUNDLE.ascx" />
+    <Content Include="Views\PartialViews\Resources\Editor\CSS_ADMIN_BUNDLE.ascx" />
+    <Content Include="Views\PartialViews\Resources\Editor\JS.ascx" />
+    <Content Include="Views\PartialViews\Resources\Editor\CSS.ascx" />
+    <Content Include="Views\PartialViews\Resources\Global\CSS.ascx" />
+    <Content Include="Views\PartialViews\Resources\Global\JS.ascx" />
+    <Content Include="Views\PartialViews\WebUserMessage.ascx" />
+    <Content Include="Views\ShoppingCart\ViewCart.aspx" />
+    <Content Include="Views\ViewProduct\Details.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Views\Shared\Template.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Home\Index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chimera.Core\Chimera.Core.csproj">
+      <Project>{acf0ec1c-9d62-422d-a47f-f3c4ef998a81}</Project>
+      <Name>Chimera.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chimera.DataAccess\Chimera.DataAccess.csproj">
+      <Project>{3b92c11a-a949-4e1a-86c9-b62b38ca6bbb}</Project>
+      <Name>Chimera.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chimera.Emails\Chimera.Emails.csproj">
+      <Project>{408a999c-6b4c-434a-b75c-890c54d21601}</Project>
+      <Name>Chimera.Emails</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chimera.Entities\Chimera.Entities.csproj">
+      <Project>{c1b78805-bf0a-4dbd-9875-1ce599ef29c8}</Project>
+      <Name>Chimera.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chimera.Resources\Chimera.Resources.csproj">
+      <Project>{8bcccb02-f635-496b-a98d-ccb54d0d79e7}</Project>
+      <Name>Chimera.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\Unauthorized.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\Authorized.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\Erika\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\Erika\Fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Fonts\fontawesome-webfont.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Fonts\fontawesome-webfont.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Fonts\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Erika\Fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Styles\socialMedia\" />
+    <Folder Include="Templates\_DefaultTemplate\App_Data\" />
+    <Folder Include="Templates\_DefaultTemplate\Fonts\" />
+    <Folder Include="Templates\_DefaultTemplate\Images\" />
+    <Folder Include="Templates\_DefaultTemplate\Styles\" />
+    <Folder Include="Templates\_DefaultTemplate\Views\ModuleViews\PartialModuleViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\_DefaultTemplate\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\_DefaultTemplate\Views\Shared\Template.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Unify\Views\Shared\Template.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Unify\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Unify\Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Templates\Unify\Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Templates\Unify\Fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\Unify\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Templates\Unify\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Templates\Unify\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Templates\Unify\Fonts\FontAwesome.otf" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56195</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/ChimeraWebsite</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

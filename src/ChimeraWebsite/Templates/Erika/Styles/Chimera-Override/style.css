@@ -1,0 +1,172 @@
+.afmatter img
+{
+    width: 40px;
+    margin-bottom: 12px;
+}
+
+.main-meta
+{
+    font-size: 20px;
+    color: #888;
+}
+
+.afmatter span
+{
+    font-size: 40px;
+    width: 40px;
+}
+
+.cta a.btn-default
+{
+    color: #333!important;
+}
+
+.cta a.btn-primary, .cta a.btn-success, .cta a.btn-info, .cta a.btn-warning, .cta a.btn-danger
+{
+    color: white!important;
+}
+
+.rposts
+{
+    margin: inherit !important;
+}
+
+.rpost1 .rdetails
+{
+    line-height: 22px;
+    padding: 5px;
+    background: #fafafa;
+    text-align: center;
+}
+
+    .rpost1 .rdetails h5
+    {
+        margin: 3px 0px;
+        padding: 3px 0px;
+    }
+
+.rpost1 .rimg img
+{
+    width: 100%;
+}
+
+.service > h5 > span
+{
+    font-size: 16px;
+}
+
+    .service > h5 > span > span:first-child
+    {
+        margin-right: 8px;
+    }
+
+.simg > span
+{
+    font-size: 50px;
+    width: 45px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+}
+
+.carousel-inner > .item > img
+{
+    width: 100%!important;
+}
+
+.ericka-gallery-1, .ericka-gallery-2, .ericka-gallery-3, .ericka-gallery-4
+{
+    text-align: center;
+}
+
+.ericka-gallery-1 img
+{
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    width: 200px;
+    max-width: 200px;
+    height: 150px;
+}
+
+.ericka-gallery-2 img
+{
+    padding: 4px;
+    width: 200px;
+    max-width: 200px;
+    height: 150px;
+}
+
+.ericka-gallery-2 .element
+{
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    width: 202px;
+    display: inline-block;
+}
+
+.ericka-gallery-2 a, .ericka-gallery-2 a:visited, .ericka-gallery-2 a:hover, .ericka-gallery-4 a, .ericka-gallery-4 a:visited, .ericka-gallery-4 a:hover
+{
+    color: #555;
+    text-decoration: none;
+}
+
+.ericka-gallery-2 .pcap
+{
+    line-height: 20px;
+    max-width: 200px;
+    margin: 0 auto;
+    background: #eee url("../../Images/header-back.png") repeat;
+    border: 1px solid #eee;
+    padding: 3px 0px;
+}
+
+.ericka-gallery-2 h5, .ericka-gallery-4 h5
+{
+    margin: 4px 0px;
+    padding: 0px;
+}
+.ericka-gallery-3 img
+{
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    width: 280px;
+    max-width: 280px;
+    height: 190px;
+}
+
+.ericka-gallery-4 img
+{
+    padding: 4px;
+    width: 280px;
+    max-width: 280px;
+    height: 190px;
+}
+
+.ericka-gallery-4 .element
+{
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    width: 282px;
+    display: inline-block;
+}
+
+.ericka-gallery-4 .pcap
+{
+    line-height: 20px;
+    max-width: 280px;
+    margin: 0 auto;
+    background: #eee url("../../Images/header-back.png") repeat;
+    border: 1px solid #eee;
+    padding: 3px 0px;
+}
+
+a.btn:visited
+{
+    color: #FFF;
+}

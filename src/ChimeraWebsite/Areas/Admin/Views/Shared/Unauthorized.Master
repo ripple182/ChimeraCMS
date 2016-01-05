@@ -1,0 +1,10 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="content">
+        <div class="container margin-top-10">
+            <%Html.RenderPartial(Url.Content("~/Areas/Admin/Views/Shared/PartialViews/WebUserMessage.ascx")); %>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+</asp:Content>

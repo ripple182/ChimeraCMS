@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SettingGroups>
+  <SettingGroup>
+    <GroupKey>FacebookSEOSettings</GroupKey>
+    <UserFriendlyName>Facebook SEO Settings</UserFriendlyName>
+    <Description>Settings used to identify your website whenever a customer posts a link to your website on Facebook.</Description>
+    <ParentCategory>1</ParentCategory>
+    <SettingsList>
+      <Setting>
+        <Key>Title</Key>
+        <UserFriendlyName>Title</UserFriendlyName>
+        <Description>The title used whenever a customer posts your website url on Facebook.</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>og:title</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>SiteName</Key>
+        <UserFriendlyName>Site Name</UserFriendlyName>
+        <Description>The name of your website used on Facebook posts.</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>og:site_name</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>Type</Key>
+        <UserFriendlyName>Type</UserFriendlyName>
+        <Description>The type of Facebook post, use "article" for default.</Description>
+        <Value>article</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>og:type</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>Url</Key>
+        <UserFriendlyName>Url</UserFriendlyName>
+        <Description>The url used to redirect users from Facebook to your website.</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>og:url</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>Image</Key>
+        <UserFriendlyName>Image</UserFriendlyName>
+        <Description>The image used to identify your website on Facebook.</Description>
+        <Value></Value>
+        <EntryType>4</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>og:image</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>Description</Key>
+        <UserFriendlyName>Description</UserFriendlyName>
+        <Description>A short description of your website used on Facebook posts.</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>og:description</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>PublishedTime</Key>
+        <UserFriendlyName>Published Time</UserFriendlyName>
+        <Description>The date of when your website or this page was first published.</Description>
+        <Value>2013-09-17T05:59:00+01:00</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>article:published_time</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>ModifiedTime</Key>
+        <UserFriendlyName>Modified Time</UserFriendlyName>
+        <Description>The date of when your website or this page was last updated, update this to force Facebook to update its SEO data on your website.</Description>
+        <Value>2013-09-17T05:59:00+01:00</Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>article:modified_time</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>Section</Key>
+        <UserFriendlyName>Category / Theme</UserFriendlyName>
+        <Description>A single keyword used to identify the category your website belongs to, i.e. "Sports", "Lifestyle".</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>article:section</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+      <Setting>
+        <Key>Tag</Key>
+        <UserFriendlyName>Keywords</UserFriendlyName>
+        <Description>Comma delimted list of keywords Facebook can use to identify your website.</Description>
+        <Value></Value>
+        <EntryType>1</EntryType>
+        <DataEntryStaticPropertyKey></DataEntryStaticPropertyKey>
+        <SettingAttributeList>
+          <SettingAttribute>
+            <Key>SettingAttributeValueKey</Key>
+            <Value>content</Value>
+          </SettingAttribute>
+          <SettingAttribute>
+            <Key>property</Key>
+            <Value>article:tag</Value>
+          </SettingAttribute>
+        </SettingAttributeList>
+      </Setting>
+    </SettingsList>
+  </SettingGroup>
+</SettingGroups>
